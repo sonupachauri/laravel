@@ -22,7 +22,7 @@
     </head>
     <body class="antialiased">
         <h2> This is Laravel About Page ! </h2>
-        {{$name}}
+        {{--$name--}}
        <p> <a href="/"> Welcome Page </a> </p>
     </body>
 </html>

@@ -38,4 +38,6 @@ Route::get('/', function () {
 //laravel7
 // Route::get('user','UserController@show');
 
-Route::view('user','users');
+//Route::view('user','users');
+
+Route::get('user',[UserController::class,'show']);

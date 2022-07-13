@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    function show($name){
-        return view('users',['name'=>$name]);
+    function show(){
+        $posts=['sonu','pachauri','manoj'];
+       // $posts=[["title"=>"test","id"=>"1"],["title"=>"test2","id"=>"2"]];
+        return view('users',['posts'=>$posts]);
     }
 }
