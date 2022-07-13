@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +31,9 @@ Route::get('/', function () {
 //   return view('about',['name'=>$name]);
 // });
 
+// for controller
+
+Route::get('user/{sonu}',[UserController::class,'show']);
+
+//laravel7
+// Route::get('user','UserController@show');
