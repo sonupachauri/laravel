@@ -21,6 +21,8 @@
         </style>
     </head>
     <body class="antialiased">
-        <h2> This is Laravel Test file! </h2>
+        <h2> This is Laravel About Page ! </h2>
+        {{$name}}
+       <p> <a href="/"> Welcome Page </a> </p>
     </body>
 </html>

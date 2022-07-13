@@ -17,6 +17,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/test',function(){
-  return view('test');
-});
+// Routing Testing
+
+// Route::get('/about',function(){
+//   return view('about');
+// });
+
+// Route::view('about','/about');
+
+// Route::get('/about/{name}',function($name){
+//   return view('about',['name'=>$name]);
+// });
+
