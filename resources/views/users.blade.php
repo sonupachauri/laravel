@@ -1,0 +1,1 @@
+<p> <h2> This is {{$name}} User's View File !</h2></p>
