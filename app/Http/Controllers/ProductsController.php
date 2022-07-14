@@ -13,4 +13,10 @@ class ProductsController extends Controller
       ]);
       return $req->input();
     }
+
+    public function uploadFile(Request $req){
+
+      return $req->file('file')->store('img');
+      
+    }
 }

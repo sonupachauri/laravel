@@ -58,9 +58,32 @@ Route::get('/', function () {
 // Route::get('/users',[UserController::class,'index']);
 // Route::get('/users/index2',[UserController::class,'index2']);
 
-Route::get('/users/getApiData',[UserController::class,'getApiData']);
+// Route::get('/users/getApiData',[UserController::class,'getApiData']);
 
-Route::view('/login/testHttpMethods','testHttpMethods');
+// Route::view('/login/testHttpMethods','testHttpMethods');
 
-Route::put('getHttpMethodData',[UserController::class,'getHttpMethodData']);
+// Route::put('getHttpMethodData',[UserController::class,'getHttpMethodData']);
 
+// Route::view('login','login');
+// Route::view('profile','profile');
+
+// Route::post('userLogin',[UserController::class,'userLogin']);
+
+// Route::get('logout',function(){
+     
+//     if(session()->has('user')){
+//         session()->pull('user',null);
+//     }
+//    return redirect('login');
+// });
+
+// Route::get('login',function(){
+     
+//     if(session()->has('user')){
+//         return redirect('profile');
+//     }
+//    return view('login');
+// });
+
+Route::view('fileupload','fileupload');
+Route::post('uploadFile',[ProductsController::class,'uploadFile']);

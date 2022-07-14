@@ -34,4 +34,19 @@ class UserController extends Controller
     function getHttpMethodData(Request $req){
         return $req->input();
     }
+    function userLogin(Request $req){
+        //return $req->input();
+
+        $inputData=$req->input('username');
+        if($req->input()){
+             $req->validate([
+                'username'=>'required | min:10 | max:20',
+                'password'=>'required | min:5 | max:10',
+             ]) ;
+             $req->session()->put('user',$inputData);
+             return \redirect('profile');
+        }
+        return view('login');
+
+    }
 }
