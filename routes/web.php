@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProductsController;
+
 
 
 /*
@@ -41,3 +43,7 @@ Route::get('/', function () {
 //Route::view('user','users');
 
 Route::get('user',[UserController::class,'show']);
+
+Route::view('product','product');
+
+Route::post('getFormData',[ProductsController::class,'getFormData']);
