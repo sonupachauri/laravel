@@ -49,4 +49,49 @@ class UserController extends Controller
         return view('login');
 
     }
+
+    function list(){
+        //$userData= User::all();
+        $userData= User::paginate(20);
+        return \view('list',['users'=>$userData]);
+    }
+
+    function userSaveData(Request $req){
+        $user=new User;
+        
+        if($req->input()){
+            $req->validate([
+                'name'=>'required',
+                'email'=>'required',
+                'address'=>'required'
+             ]) ;
+             $user->name=$req->name;
+             $user->email=$req->email;
+             $user->address=$req->address;
+             $userSaved= $user->save();
+             if($userSaved){
+                return \redirect('userslist');
+             }      
+        }
+    }
+
+    function userShow($id){
+        $Editdata= User::find($id);
+        return \view('list',['showData'=>$Editdata]);
+    }
+
+    function userDelete($id){
+        $deleteData=User::find($id);
+        $deleteData->delete();
+           return \redirect('userslist');
+    }
+
+    function userUpdate(Request $req) {
+        $updateData=User::find($req->input('id'));
+        $updateData->name=$req->name;
+        $updateData->email=$req->email;
+        $updateData->address=$req->address;
+        $updateData->save();
+        return redirect('userslist');
+    }
 }

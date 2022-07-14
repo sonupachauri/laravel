@@ -85,5 +85,12 @@ Route::get('/', function () {
 //    return view('login');
 // });
 
-Route::view('fileupload','fileupload');
-Route::post('uploadFile',[ProductsController::class,'uploadFile']);
+// Route::view('fileupload','fileupload');
+// Route::post('uploadFile',[ProductsController::class,'uploadFile']);
+
+
+Route::get('/userslist',[UserController::class,'list']);
+Route::post('/userSaveData',[UserController::class,'userSaveData']);
+Route::get('/user/edit/{id}',[UserController::class,'userShow']);
+Route::get('/user/delete/{id}',[UserController::class,'userDelete']);
+Route::post('userUpdate',[UserController::class,'userUpdate']);
