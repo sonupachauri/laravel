@@ -47,3 +47,5 @@ Route::get('user',[UserController::class,'show']);
 Route::view('product','product');
 
 Route::post('getFormData',[ProductsController::class,'getFormData']);
+
+Route::view('noaccess','noaccess');
