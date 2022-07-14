@@ -42,10 +42,14 @@ Route::get('/', function () {
 
 //Route::view('user','users');
 
-Route::get('user',[UserController::class,'show']);
+//Route::get('user',[UserController::class,'show']);
 
 Route::view('product','product');
 
 Route::post('getFormData',[ProductsController::class,'getFormData']);
 
 Route::view('noaccess','noaccess');
+
+Route::group(['middleware'=>['protectPage']],function(){
+    Route::get('user',[UserController::class,'show']);
+});
