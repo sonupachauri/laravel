@@ -42,15 +42,25 @@ Route::get('/', function () {
 
 //Route::view('user','users');
 
-Route::get('user',[UserController::class,'show']);
+// Route::get('user',[UserController::class,'show']);
 
-Route::view('product','product')->middleware('protectedPage');;
+// Route::view('product','product')->middleware('protectedPage');;
 
-Route::post('getFormData',[ProductsController::class,'getFormData']);
+// Route::post('getFormData',[ProductsController::class,'getFormData']);
 
-Route::view('noaccess','noaccess');
+// Route::view('noaccess','noaccess');
 
 //group middleware
 // Route::group(['middleware'=>['protectPage']],function(){
 //     Route::get('user',[UserController::class,'show']);
 // });
+
+// Route::get('/users',[UserController::class,'index']);
+// Route::get('/users/index2',[UserController::class,'index2']);
+
+Route::get('/users/getApiData',[UserController::class,'getApiData']);
+
+Route::view('/login/testHttpMethods','testHttpMethods');
+
+Route::put('getHttpMethodData',[UserController::class,'getHttpMethodData']);
+
